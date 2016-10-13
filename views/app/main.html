@@ -1,0 +1,19 @@
+{% extends "app-layout.html" %}
+
+{% block title %}Koa base about{% endblock %}
+
+{% block content %}
+	<div id="content"></div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+window.socket = io.connect()
+
+window.socket.on('connect', function () {
+	console.log('Socket connected')
+})
+</script>
+<script type="text/javascript" src="/build/chat.js"></script>
+{% endblock %}
